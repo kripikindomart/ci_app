@@ -19,7 +19,8 @@
                         </h3>
                         <br>
                         <hr>
-                        <button type="button" class="btn btn-success btn-sm" id="tambah"><i class="fas fa-plus"></i> Tambah</button>
+                        <a href="#crud-add" data-url="crud-add" class="btn btn-success btn-sm" id="tambah"><i class="fas fa-plus"></i> Tambah</a>
+                        <!-- <button type="button" class="btn btn-success btn-sm" id="tambah"><i class="fas fa-plus"></i> Tambah</button> -->
                     </div>
                     <div class="card-body pad table-responsive">
                         <table class="table table-bordered table-sm dt-responsive nowrap" id="myData" width="100%">

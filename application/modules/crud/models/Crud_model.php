@@ -93,22 +93,22 @@ class Crud_model extends CI_Model
     }
     public function tambah()
     {
-        $user = htmlspecialchars($_POST['user']);
-        $id_role = htmlspecialchars($_POST['role']);
-        $pass = htmlspecialchars($_POST['pass']);
-        $cek = $this->db->get_where('user', ['username' => $user])->row();
+        $controller = htmlspecialchars($_POST['controller']);
+        $core = htmlspecialchars($_POST['core']);
+        $cek = $this->db->get_where('crud', ['crud' => $controller])->row();
         if ($cek) {
             $hasil['status'] = false;
-            $hasil['pesan'] = "Username sudah Terpakai";
+            $hasil['pesan'] = "Module sudah Terpakai";
             return $hasil;
         }
         $data = [
-            'username' => $user,
-            'password' => password_hash($pass, PASSWORD_DEFAULT),
-            'id_role' => $id_role,
-            'is_active' => 1
+            'crud' => $controller,
+            'core' => $core,
         ];
-        $this->db->insert('user', $data);
+        $save = $this->db->insert('crud', $data)->insert_id();
+        if ($save) {
+        	
+        }
         $hasil['status'] = true;
         $hasil['pesan'] = "User berhasil ditambahkan";
         return $hasil;

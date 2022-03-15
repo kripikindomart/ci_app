@@ -34,6 +34,8 @@ class Crud extends MY_Controller
 			'role' => $this->db->get('user_role')->result()
 		];
 
+	
+
 		$this->load->view('_layout/admin/head', $data);
 		$this->load->view('core/js', $data);
 		$this->load->view('core/modals', $data);

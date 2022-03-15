@@ -28,36 +28,41 @@
         "orderable": false
       }]
     });
-    $('#tambah').click(function() {
-      $('.modal-body').html(form);
-      tambah =
-      '<input type="hidden" name="aksi" id="aksi">' +
-      '<div class="form-group">' +
-      '<label for="pass">Password</label>' +
-      '<div class="input-group">' +
-      '<input type="password" name="pass" id="pass" class="form-control" placeholder="Masukkan Password" required>' +
 
-      '<span class="input-group-text"><i class="fa fa-fw fa-eye"></i></span>' +
-
-      '</div>' +
-      '</div>';
-      $('#modal').find('h5').html('Tambah');
-      $('#modal').find('#tes').html(tambah);
-      $('#modal').find('#btn').html('Tambah');
-      $('#aksi').val('tambah');
-      $('#modal').modal('show');
-      $('.input-group-text').click(function() {
-        if ($('#pass').is(':password')) {
-          $('#pass').attr('type', 'text');
-          $(this).find('i').addClass('fa-eye-slash');
-          $(this).find('i').removeClass('fa-eye');
-        } else {
-          $('#pass').attr('type', 'password');
-          $(this).find('i').removeClass('fa-eye-slash');
-          $(this).find('i').addClass('fa-eye');
-        }
-      });
+    $('#tambah').click(function(){
+      var url = $(this).attr('data-url');
+      console.log(url.includes("-"));
     });
+    // $('#tambah').click(function() {
+    //   $('.modal-body').html(form);
+    //   // tambah =
+    //   // '<input type="hidden" name="aksi" id="aksi">' +
+    //   // '<div class="form-group">' +
+    //   // '<label for="pass">Password</label>' +
+    //   // '<div class="input-group">' +
+    //   // '<input type="password" name="pass" id="pass" class="form-control" placeholder="Masukkan Password" required>' +
+
+    //   // '<span class="input-group-text"><i class="fa fa-fw fa-eye"></i></span>' +
+
+    //   // '</div>' +
+    //   // '</div>';
+    //   $('#modal').find('h5').html('Tambah');
+    //   //$('#modal').find('#tes').html(tambah);
+    //   $('#modal').find('#btn').html('Tambah');
+    //   $('#aksi').val('tambah');
+    //   $('#modal').modal('show');
+    //   $('.input-group-text').click(function() {
+    //     if ($('#pass').is(':password')) {
+    //       $('#pass').attr('type', 'text');
+    //       $(this).find('i').addClass('fa-eye-slash');
+    //       $(this).find('i').removeClass('fa-eye');
+    //     } else {
+    //       $('#pass').attr('type', 'password');
+    //       $(this).find('i').removeClass('fa-eye-slash');
+    //       $(this).find('i').addClass('fa-eye');
+    //     }
+    //   });
+    // });
     $('#data').on('click', '#active', function() {
       id_user = $(this).data('id_user');
       active = $(this).data('active');

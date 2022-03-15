@@ -12,23 +12,16 @@
                 <div class="modal-body">
                     <div id="alert"></div>
                     <div class="form-group">
-                        <label for="user">Username</label>
-                        <input type="text" name="user" id="user" class="form-control form-control-sm" placeholder="Username" required>
+                        <label for="user">controller</label>
+                        <input type="text" name="controller" id="controller" class="form-control form-control-sm" placeholder="Controller" required>
                     </div>
                     <div id="tes"></div>
                     <div class="form-group">
-                        <label for="role">Role</label>
-                        <select name="role" id="role" class="form-control form-control-sm" required>
-                            <option value="">Pilih Role</option>
-                            <?php foreach ($role as $r) {
-                                if ($this->session->userdata('role') != 1) {
-                                    if ($r->id_role != 1) { ?>
-                                        <option value="<?= $r->id_role ?>"><?= $r->role ?></option>
-                                    <?php }
-                                } else { ?>
-                                    <option value="<?= $r->id_role ?>"><?= $r->role ?></option>
-                            <?php }
-                            } ?>
+                        <label for="role">core</label>
+                        <select name="core" id="core" class="form-control form-control-sm" required>
+                            <option value="Y">Y</option>
+                            <option value="N">N</option>
+                            
                         </select>
                     </div>
                 </div>
